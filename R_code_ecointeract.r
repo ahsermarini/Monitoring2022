@@ -66,3 +66,17 @@ pairs(pol, col= "blue", cex= 1.5)
 pairs(~ cadmium + copper + lead + zinc, data= meuse)
 
 #correlation 1 is postive 0 no correlation -1 negative correlation
+
+#spatial compnenets library(sp) allows us to explore - we are going to look at the coordinates this explains them to r
+coordinates (meuse) = ~ x+y
+#now you can make a spatail plot
+plot (meuse)
+meuse
+
+spplot (meuse, "zinc", main= "Concentraion of zinc") #this looks at specifcally the plot of zinc and you are naming the graph with main the title
+
+# we can als change the look of a spatial plot and look at an array of varaibles
+spplot (meuse, c ("copper", "zinc")) #shows the several variables bit rough bc the lgend is the same for each varaible but better to do it seprate
+
+Bubbles instead of colors
+bubble(meuse, "zinc")
