@@ -1,4 +1,4 @@
-# This is a code for investigating relationships among ecological variables
+# This is a code for investigating relationships among ecological variables - must use library to have this function
 
 library(sp) # you can also make use of require ()
 
@@ -30,7 +30,7 @@ summary(meuse)
 plot(cadmium, zinc)
 
 # you must write it in the table and your object meuse so must explain to r that they are a part of the object
-# this symbol will be used a lot this is a rope that links them together $ used for linking
+# this symbol will be used a lot this is a rope that links them together $ used for linking dollar sign is attaching
 plot (meuse$cadmium, meuse$zinc)
 
 cad<- meuse$cadmium
@@ -48,3 +48,21 @@ plot(cadmium, zinc)
 detach(meuse)
 
 pairs(meuse)
+
+# changing colors of plots. Recall the previous function and add col and choose color type
+ plot (meuse$cadmium, meuse$zinc, col= "red")
+
+plot (meuse$cadmium, meuse$zinc, col= "red", cex= 2) # cex is the size
+plot (meuse$cadmium, meuse$zinc, col= "red", cex= 2, pch= 19) #this changes the type of dot for the data set
+
+# creating a subset stating what you want in your data set such as 2:5 (like a printer from 2-5)
+meuse[, 3:6] #this is were we are starting in a selection , is the starting point
+
+#now we will assign this data set to an object prgramming uses short names
+pol <- meuse[, 3:6]
+pairs(pol, col= "blue", cex= 1.5)
+
+#lets pair some columns using the names of the columns
+pairs(~ cadmium + copper + lead + zinc, data= meuse)
+
+#correlation 1 is postive 0 no correlation -1 negative correlation
