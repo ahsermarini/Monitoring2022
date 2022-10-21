@@ -7,8 +7,11 @@ setwd("C:/Users/serma/OneDrive/Documents/RLab_Ecosystems")
 
 #if you get an error because of copying and paste switch to backslash
 
+covid <- read.table("covid_agg.csv", header = T) 
 read.table("covid_agg.csv")
-read.table("covid_agg.csv", header= TRUE) 
+read.table("covid_agg.csv", header = T) 
+
+#tell excel that the point 
 
 #it will take all the numbers as data  because we have a header with the names of the column which is not data so header is TRUE no header FALSE
 # seperators 
