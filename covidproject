@@ -1,0 +1,27 @@
+#use of working directory
+setwd("C:/Users/serma/OneDrive/Documents/RLab_Ecosystems")
+
+read.table("covid_agg.csv")
+read.table("covid_agg.csv", header = T) 
+
+install.packages("spastat")
+library(spatstat)
+
+#arrays use c for a range
+attach(covid)
+covid_planner <- ppp(x=lon, y=lat, c(-180,180), c(-90,90))
+
+plot(covid_planner) #makes a plot
+
+density_map <- density(covid_planner)
+plot(density_map)
+points(covid_planner) #adds points to the graph
+points(covid_planner, pch=19)
+
+#function to change colors
+cl <- colorRampPalette(c("cyan", "coral", "chartreuse"))(100) #passing through the different colors for the small changes 100 is how many we want
+plot(density_map, col=cl)
+points(covid_planner, pch=17, col="blue")
+
+cl <- colorRampPalette(c("cornflowerblue", "hotpink1", "snow"))(100)
+points(covid_planner, pch=19, col="blue")
