@@ -1,0 +1,28 @@
+# community ecology example with R
+# Multivariate analysis
+
+library(vegan)
+setwd("C:/Users/serma/OneDrive/Documents/RLab_Ecosystems") #setworking directory
+
+load #reload saved data sets from R
+# Two types of data biomes and biome types - plants species against biomes 
+
+# to upload an R project use the following function
+load("biomes_multivar.Rdata")
+
+ls() #shows the file list
+
+head(biomes)
+#cannot use all of the plots 20 of them
+
+multivar <- decorana(biomes)
+multivar
+
+plot(multivar) #this shows ALL the previous plots squeezed in just two axises
+
+# Now we will group the plots in the graph
+attach(biomes_types)
+
+# type is the defacto so the type of biome 
+# ehull is 
+ordiellipse(multivar, type, col=c("black","red","green","blue"), kind = "ehull", lwd=3)
