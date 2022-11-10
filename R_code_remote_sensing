@@ -1,0 +1,14 @@
+library(raster)
+library(RStoolbox)
+
+setwd("C:/Users/serma/OneDrive/Documents/RLab_Ecosystems") #setworking directory
+
+brick("p224r63_2011_masked.grd") 
+# imports all the files together
+
+plot(p224r63_2011)
+
+colorRampPalette(c('black','grey','light grey'))(100)
+cl <- colorRampPalette(c('black','grey','light grey'))(100) # 
+plot(p224r63_2011, col=cl)
+plot(p224r63_2011, col=cl)
