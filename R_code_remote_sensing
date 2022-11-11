@@ -27,3 +27,17 @@ plot(p224r63_2011[[1]], col=cl) #allement and more simple
 # exercise: change color pallete from dark blue to light blue
 
 cl <- colorRampPalette(c('darkblue','steel blue 1','light sky blue'))(100)
+
+# how to build multiframe plot one image bewside the other
+par(mfrow=c(1,2))
+plot(p224r63_2011[[1]], col=cl)
+plot(p224r63_2011[[2]], col=cl)
+
+# multiframe with 4 images (2x2)
+
+par(mfrow=c(2,2)) #2x2 is the dimension
+
+plot(p224r63_2011[[1]], col=cl)
+plot(p224r63_2011[[2]], col=cl)
+plot(p224r63_2011[[3]], col=cl)
+plot(p224r63_2011[[4]], col=cl)
