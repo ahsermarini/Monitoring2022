@@ -76,3 +76,7 @@ ggtitle("Landsurface Temperature Differences from 2000 to 2015") +
 scale_fill_viridis(option="inferno", direction=-1, alpha=0.8) 
 
 p1 + p2 + p3
+
+#these are all the layers of the year this will show the highest temp for each year - red to green higher temps then green to blue higher temp than before
+plotRGB(TGr, r=1, g=2, b=4, stretch="lin")
+#or histor gram stretch="his"
