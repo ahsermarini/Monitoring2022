@@ -79,4 +79,4 @@ p1 + p2 + p3
 
 #these are all the layers of the year this will show the highest temp for each year - red to green higher temps then green to blue higher temp than before
 plotRGB(TGr, r=1, g=2, b=4, stretch="lin")
-#or histor gram stretch="his"
+#or histor gram stretch="hist"
