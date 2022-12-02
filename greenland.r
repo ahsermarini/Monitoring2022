@@ -52,3 +52,27 @@ import <- lapply(rlist, raster)
 
 #named it tgr then stack all the imported images
 TGr <- stack(import)
+
+p1 <- ggplot() +
+geom_raster(TGr$lst_2000, mapping = aes(x=x, y=y, fill=lst_2000, alpha=0.8)) +
+ggtitle("Landsurface Temperature 2000") +
+scale_fill_viridis(option="mako, direction=-1) 
+
+p2 <- ggplot() +
+geom_raster(TGr$lst_2015, mapping = aes(x=x, y=y, fill=lst_2015)) +
+ggtitle("Landsurface Temperature 2015") +
+scale_fill_viridis(option="mako", direction=-1, alpha=0.8) 
+
+p1 + p2
+
+#exercise make the differences between 2015 and 2000
+2015 - 2000
+dift = TGr$lst_2015 - TGr$lst_2000 #equal instead of arrow because mathematical but does the same thing
+dift
+
+p3 <- ggplot() +
+geom_raster(dift, mapping = aes(x=x, y=y, fill=layer)) +
+ggtitle("Landsurface Temperature Differences from 2000 to 2015") +
+scale_fill_viridis(option="inferno", direction=-1, alpha=0.8) 
+
+p1 + p2 + p3
