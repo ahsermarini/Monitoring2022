@@ -1,7 +1,25 @@
 install.packages("raster")
 install.packages("RStoolbox")
+install.packages("terra")
 
 library(raster)
 library(RStoolbox)
+library(terra)
+
 
 setwd("C:/Users/Serma/OneDrive/Desktop/Spatial")
+
+# Load individual bands (replace with actual file paths)
+band1 <- rast("LC08_L2SP_119038_20140316_20200912_02_T1_SR_B1.tif")  # Band 1
+band2 <- rast("LC08_L2SP_119038_20140316_20200912_02_T1_SR_B2.tif")  # Band 2
+band3 <- rast("LC08_L2SP_119038_20140316_20200912_02_T1_SR_B3.tif")  # Band 3
+band4 <- rast("LC08_L2SP_119038_20140316_20200912_02_T1_SR_B4.tif")  # Band 4
+band5 <- rast("LC08_L2SP_119038_20140316_20200912_02_T1_SR_B5.tif")  # Band 5
+
+stacked_bands_2014 <- c(band1, band2, band3, band4, band5)
+
+# Plot True Color Composite (assuming Band 4 = Red, Band 3 = Green, Band 2 = Blue)
+plotRGB(stacked_bands_2014, r = 4, g = 3, b = 2, stretch="lin")
+
+clb <- colorRampPalette(c('dark blue','blue','light blue'))(100) # 
+plot(p224r63_2011$B1_sre, col=clb)
