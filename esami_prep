@@ -21,5 +21,5 @@ stacked_bands_2014 <- c(band1, band2, band3, band4, band5)
 # Plot True Color Composite (assuming Band 4 = Red, Band 3 = Green, Band 2 = Blue)
 plotRGB(stacked_bands_2014, r = 4, g = 3, b = 2, stretch="lin")
 
-clb <- colorRampPalette(c('dark blue','blue','light blue'))(100) # 
-plot(p224r63_2011$B1_sre, col=clb)
+plotRGB(stacked_bands_2014, r = 5, g = 3, b = 2, stretch="lin")
+
