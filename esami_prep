@@ -1,0 +1,7 @@
+install.packages("raster")
+install.packages("RStoolbox")
+
+library(raster)
+library(RStoolbox)
+
+setwd("C:/Users/Serma/OneDrive/Desktop/Spatial")
