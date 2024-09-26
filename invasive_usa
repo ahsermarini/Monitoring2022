@@ -1,0 +1,24 @@
+# First steps: 
+
+# Setting up the working directory 
+setwd("C:/Users/Serma/OneDrive/Desktop/Spatial/invasive_usa")
+
+install.packages("terra")
+install.packages("tidyterra")
+install.packages("dplyr")
+intall.packages("geodata")
+install.packages("predicts")
+intall.packages("raster")
+intall.packages("ggplot2")
+intall.packages("maps")
+
+#Accessing all required packages 
+
+library(terra)         # Provides tools for spatial data manipulation and analysis, particularly for raster and vector data
+library(tidyterra)     # Integrates 'terra' with the 'tidyverse', enabling tidy-style data manipulation for spatial data
+library(dplyr)         # data manipulation package from the 'tidyverse' for filtering, selecting, and transforming data
+library(geodata)       # Facilitates easy access and downloading of geospatial data, including climate and environmental data
+library(predicts)      # package for spatial predictive modeling, especially species distribution modeling
+library(raster)        # Allows for the analysis and modeling of spatial raster data, particularly useful for environmental data
+library(ggplot2)       # Used to create highly customizable and visually appealing plots, particularly effective for data visualization
+library(maps)   
